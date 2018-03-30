@@ -4,28 +4,45 @@ using UnityEngine;
 
 public class NumberWizard : MonoBehaviour {
 
-    int max = 1000;
-    int min = 1;
+    int max;
+    int min;
+    int guess;
 
     // Use this for initialization
-    void Start () {
+    void Start() => StartGame();
+
+    // Update is called once per frame
+    void Update () {
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            min = guess;
+            NextGuess();
+        } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+            max = guess;
+            NextGuess();
+        } else if (Input.GetKeyDown(KeyCode.Return)) {
+            print("I won!");
+            StartGame();
+        }
+    }
+
+    void StartGame() {
+        max = 1000;
+        min = 1;
+        guess = 500;
+        print("=============================");
         print("Welcome to the Number Wizard!");
         print("Pick a number in your head, but don't tell.");
 
         print("The hightest number you can pick is " + max + " and the lowest is " + min + ".");
 
-        print("Is the number higher or lower than 500?");
+        print("Is the number higher or lower than " + guess + "?");
         print("Up = higher, down = lower, return = equal");
+        max = max + 1;
     }
-    
-    // Update is called once per frame
-    void Update () {
-        if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            print("Up arrow pressed");
-        } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-            print("Down arrow pressed");
-         } else if (Input.GetKeyDown(KeyCode.Return)) {
-            print("Return pressed");
-        }
+
+    void NextGuess() {
+        guess = (max + min) / 2;
+        print("Higher or lower than " + guess + "?");
+        print("Up = higher, down = lower, return = equal");
     }
 }
