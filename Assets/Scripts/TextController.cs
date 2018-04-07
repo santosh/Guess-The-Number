@@ -90,7 +90,8 @@ public class TextController : MonoBehaviour {
     void courtyard () {
         text.text = "You walk through the courtyard dressed as a cleaner. " + 
             "The guard tips his hat at you as you waltz past, claiming " + 
-            "your freedom. You heart races as you walk into the sunset.\n\n" + 
+            "your freedom. You heart races as you walk into the sunset.\n" + 
+            "Bhojpuri version to be launched soon.\n\n" + 
             "Press P to Play again." ; 
         if      (Input.GetKeyDown(KeyCode.P))        {myState = States.cell;}
     }
