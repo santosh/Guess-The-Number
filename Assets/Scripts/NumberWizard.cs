@@ -9,7 +9,9 @@ public class NumberWizard : MonoBehaviour {
     int guess;
 
     // Use this for initialization
-    void Start() => StartGame();
+    void Start() {
+        StartGame();
+    }
 
     // Update is called once per frame
     void Update () {
