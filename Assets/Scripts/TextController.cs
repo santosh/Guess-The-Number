@@ -42,87 +42,85 @@ public class TextController : MonoBehaviour {
     }
 
     void in_closet() {
-        text.text = "Inside the closet you see a cleaner's uniform that looks about your size! " +
-            "Seems like your day is looknig-up.\n\n" +
+        text.text = "Almari me ta aego dress baa, safai kare wala ke lagat baa, ekdum tohar size ke! " +
+            "Laga ta kismat khule ke ba.\n\n" +
             "Press D to Dress up, or R to Return to the corridor";
         if      (Input.GetKeyDown(KeyCode.R))       {myState = States.corridor_2;}
         else if (Input.GetKeyDown(KeyCode.D))       {myState = States.corridor_3;}
     }
 
     void closet_door() {
-        text.text = "You are looking at a closet door, unfortunately it's locked. " +
-            "Maybe you could find something around to help enourage it open?\n\n" +
+        text.text = "Tu ab almaari ke kewadi pe dekhat h, badkismati se uu band ba. " +
+            "Kuch khojal jaa sakela ka, khole khati?\n\n" +
             "Press R to Return to the corridor"; 
         if      (Input.GetKeyDown(KeyCode.R))       {myState = States.corridor_0;}
     }
 
     void corridor_3() { 
-        text.text = "You're standing back in the corridor, now convincingly dressed as a cleaner. " + 
-            "You strongly consider the run for freedom.\n\n" + 
+        text.text = "Galiyara me aa gela, safai wala karamchari ban gela ekdum. " + 
+            "Laga ta ki nikle me jada dikkat na hoi ab.\n\n" + 
             "Press S to take the Stairs, or U to Undress"; 
         if      (Input.GetKeyDown(KeyCode.S))       {myState = States.courtyard;} 
         else if (Input.GetKeyDown(KeyCode.U))       {myState = States.in_closet;}
     }
 
     void corridor_2() {
-        text.text = "Back in the corridor, having declined to dress-up as a cleaner.\n\n" + 
+        text.text = "Wapas galiyara me aa gela, Koi dusra idea soche ke padi.\n\n" + 
             "Press C to revisit the Closet, and S to climb the stairs"; 
         if      (Input.GetKeyDown(KeyCode.C))       {myState = States.in_closet;} 
         else if (Input.GetKeyDown(KeyCode.S))       {myState = States.stairs_2;}
     }
 
     void corridor_1() { 
-        text.text = "Still in the corridor. Floor still dirty. Hairclip in hand. " + 
-            "Now what? You wonder if that lock on the closet would succumb to " + 
-            "to some lock-picking?\n\n" + 
+        text.text = "Fir se galiyara me. Jameen pe gandagi. Hath me hairclip. " + 
+            "Ab kaa? Tu sochat hauua ki hairclip se talwa kholal jaa sakela ka?\n\n" + 
             "P to Pick the lock, and S to climb the stairs"; 
         if      (Input.GetKeyDown(KeyCode.P))       {myState = States.in_closet;} 
         else if (Input.GetKeyDown(KeyCode.S))       {myState = States.stairs_1;}
     }
    
     void floor () {
-        text.text = "Rummagaing around on the dirty floor, you find a hairclip.\n\n" + 
+        text.text = "Bada dhyaan se khojla ke baad khali aego hairclip milal, baaki to kachra lagat baa.\n\n" + 
             "Press R to Return to the standing, or H to take the Hairclip." ; 
         if      (Input.GetKeyDown(KeyCode.R))       {myState = States.corridor_0;} 
         else if (Input.GetKeyDown(KeyCode.H))       {myState = States.corridor_1;}
     }
 
     void courtyard () {
-        text.text = "You walk through the courtyard dressed as a cleaner. " + 
-            "The guard tips his hat at you as you waltz past, claiming " + 
-            "your freedom. You heart races as you walk into the sunset.\n" + 
-            "Bhojpuri version to be launched soon.\n\n" + 
+        text.text = "Safai karmchari ban ke angan se bahar jait h. " + 
+            "Guard san bhi sab tohar kaam se khush badan sa. " + 
+            "Tohar dil jor jor se dhadkat ba.\n\n" + 
             "Press P to Play again." ; 
         if      (Input.GetKeyDown(KeyCode.P))        {myState = States.cell;}
     }
 
     void stairs_1 () {
-        text.text = "Unfortunately weilding a puny hairclip hasn't given you the " + 
-           "confidence to walk out into a courtyard surrounded by armed guards!\n\n" + 
+        text.text = "Badkismati se tanni chuke hairclip hath me lela se aetna bhi " + 
+           "confidence na aa gail ki banduk se laes guard se bharal angan se nikal gaiba!\n\n" + 
            "Press R to Retreat down the stairs" ; 
         if      (Input.GetKeyDown(KeyCode.R))        {myState = States.corridor_1;}
     }
 
     void stairs_2() {
-        text.text = "You feel smug for picking the closet door open, and are still armed with " + 
-            "a hairclip (now badly bent). Even these achievements together don't give " + 
-            "you the courage to climb up the staris to your death!\n\n" + 
+        text.text = "Tohke to naaz baa ki hairclip abhi bhi tora pass ba. Lekin almari khole " + 
+            "ke baad thoda tedha ho gail baa. Etna kare ka baad bhi aetna confidence na baa " + 
+            "sidhi se upar jaa ke aapan maut se mil jaain!\n\n" + 
             "Press R to Return to the corridor"; 
         if      (Input.GetKeyDown(KeyCode.R))        {myState = States.corridor_2;}
     }
 
     void stairs_0() {
-        text.text = "You started walking up the stairs towards the outside light. " +
-            "You realise it's not break time, and you'll be caught immediately. " +
-            "You slither back down the stairs and reconsider.\n\n" +
+        text.text = "Aangna me jaat bada. " +
+            "Tohke jaldiye samajh me aa gail ki tu pakdael ja sake la. " +
+            "Fatak ne niche jaa ke soche ke padi.\n\n" +
             "Press R to Return to the corridor.";
         if      (Input.GetKeyDown(KeyCode.R))        {myState = States.corridor_0;}
     }
 
     void cell() {
-        text.text = "You are in a prison cell, and you want to escape. There are " + 
-            "some dirty sheets on the bed, a mirror on the wall, and the door " + 
-            "is locked from the outside.\n\n" + 
+        text.text = "Tu jail me bada a tora ke nikle ke ba. Bichhauna " + 
+            "pe kuch purana kagaj baa, diwall pe aego ainak, aau " + 
+            "kenwadi bahre se tala lagal baa.\n\n" + 
             "Press S to view Sheets, M to view Mirror and L to view Lock" ;
         if      (Input.GetKeyDown(KeyCode.S))       {myState = States.sheets_0;}
         else if (Input.GetKeyDown(KeyCode.M))       {myState = States.mirror;}
@@ -130,57 +128,55 @@ public class TextController : MonoBehaviour {
     }
 
     void mirror() {
-        text.text = "The dirty old mirror on the wall seems loose.\n\n" + 
+        text.text = "Lagata ainakwa dhila ba. Kaahe ho?\n\n" + 
             "Press T to Take the mirror, or R to Return to cell.";
         if      (Input.GetKeyDown(KeyCode.T))        {myState = States.cell_mirror;}
         else if (Input.GetKeyDown(KeyCode.R))        {myState = States.cell;}
     }
 
     void sheet_0() {
-        text.text = "You can't believe in these things. Surely it's " + 
-            "time somebody changed them. The pleasure of prison life " + 
-            "I guess.\n\n" + 
+        text.text = "Ee kagajwa pe bharosa na karal jaa sakela. Ee kauno " + 
+            "maza leve khatir likhle badan sab jail ke logan.\n\n" + 
             "Press R to Return to roaming your cell.";
         if      (Input.GetKeyDown(KeyCode.R))       {myState = States.cell;}
     }
 
     void sheet_1() {
-        text.text = "Holding a mirror in your hand doesn't make " + 
-            "the sheets look any better.\n\n" +
+        text.text = "Hath me ainak leve se kagajwa badhiya na dikhi\n\n" +
             "Press R to Return to roaming your cell.";
         if      (Input.GetKeyDown(KeyCode.R))       {myState = States.cell_mirror;}
     }
 
     void lock_0() {
-        text.text = "This is one of those button locks. You have no idea what the" +
-            "combination is. You wish you could somehow see where the dirty" +
-            "fingerprints were, maybe that would help.\n\n" +
+        text.text = "Battam wala tala ba ho! Tora ke kuchho pata naikhe " +
+            "key combination ke baare me. Kaisahu agar fingerprint dekhal jaa " +
+            "sake ta baat ban jaai. Laga ta gandagi ke nisan baa keypad par.\n\n" +
             "Press R to Return to roaming your cell.";
         if      (Input.GetKeyDown(KeyCode.R))       {myState = States.cell;}
     }
 
     void lock_1() {
-        text.text = "You carefully put the mirror through the bars, and turn it round " + 
-            "so you can see the lock. You can just make out finderprints around " + 
-            "the buttons. You press the dirty buttons, and hear a click.\n\n" + 
+        text.text = "Ekdum savdhani se ainakwa ke jailwa ke dandiya ke paar kar dehla, " + 
+            "ainakwa ke ghumaila se tohra ke tala lauke lagal. Ganda fingerprint wala " + 
+            "button lauke lagal. Tu ganda button dabaite jaat hauaa, click ke awaaz aael.\n\n" + 
             "Press O to Open, or R to Return to your cell.";
         if      (Input.GetKeyDown(KeyCode.O))       {myState = States.corridor_0;}
         else if (Input.GetKeyDown(KeyCode.R))       {myState = States.cell_mirror;}
     }
 
     void cell_mirror() {
-        text.text = "You are still in your cell, and you STILL want to escape! There are " +
-            "some dirty sheets on the bed, a mark where the mirror was, " +
-            "and that pesky door is still there, and firmly locked!\n\n" +
+        text.text = "Ainakwa le ke ka sawarba ab? Tohke bahar nikle ke baa " +
+            "bed pa aego purana kagaj baa, aego nisaan jahan ainak rahal, " +
+            "aego harami darwaza, jo ki khulat naikhe!\n\n" +
             "Press S to view Sheets, or L to view Lock" ;
         if      (Input.GetKeyDown(KeyCode.S))       {myState = States.sheets_1;}
         else if (Input.GetKeyDown(KeyCode.L))       {myState = States.lock_1;}
     }
 
     void corridor_0() {
-        text.text = "You're out of your cell, but not out of trouble." +
-            "You are in the corridor, there's a closet and some stairs leading to " +
-            "the courtyard. There's also various detritus on the floor.\n\n" +
+        text.text = "Tu jail ke room se bahare nikal gaila, lekin musibat abhi talal na." +
+            "Tu galiyare me haaua, aego almari ba aa sidhi ba, jauna ki angna me le jaai " +
+            "Floor bhi achha halat me naikhe, ganda ba.\n\n" +
             "C to view the Closet, F to inspect the Floor, and S to climb the stairs";
         if      (Input.GetKeyDown(KeyCode.S))       {myState = States.stairs_0;} 
         else if (Input.GetKeyDown(KeyCode.F))       {myState = States.floor;} 
