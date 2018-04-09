@@ -5,6 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/GUI/Game.unity
-    guid: 00000000000000000000000000000000
+    guid: 5b449e7e525fc9f45ba124aa7da735ee
+  - enabled: 1
+    path: Assets/_Scenes/Number Wizard UI/Start.unity
+    guid: 368ec0cd04cc0694a8ba7b46d49b9fa4
+  - enabled: 1
+    path: Assets/_Scenes/Number Wizard UI/Game.unity
+    guid: 536244d5ddb463047b6294a24d1bd6f7
+  - enabled: 1
+    path: Assets/_Scenes/Number Wizard UI/Lose.unity
+    guid: ab56807828455154382fa26dc98366ad
+  - enabled: 1
+    path: Assets/_Scenes/Number Wizard UI/Win.unity
+    guid: 767fab5437671ed4b9f1961e955f538e
