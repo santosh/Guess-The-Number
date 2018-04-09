@@ -4,10 +4,11 @@ understand the internals of Unity.
 
 This game has 3 sections.
 
-## Guess The Number
+## Guess The Number (Console)
 Simple algo which guesses number. Divides number with 2 in upper and lower limit. Upper and lower limit are updated upon every up or low keystroke.
 
 ## Escape The Jail
 Used `enum` to store states of the game. The whole story is plotted over states. Game proceeds over state my states.
 
-Third is yet to come.
+## Guess The Number (UI)
+Build upon the console version of Guess The Number.
